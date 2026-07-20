@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <title>Тест — DASS-21</title>
+    <title>Test — DASS-21</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
@@ -264,7 +264,7 @@
     <div id="app" class="container">
         <div class="header">
             <h1>DASS-21</h1>
-            <a href="index.html">← На главную</a>
+            <a href="index.html">← Home</a>
         </div>
 
         <div class="main-layout">
@@ -286,15 +286,15 @@
                         </div>
                     </div>
                     <button class="btn" @click="calculateResults" :disabled="!allAnswered">
-                        Получить результаты
+                        Get Results
                     </button>
                 </div>
 
                 <div v-else class="results">
-                    <h2>Результаты тестирования</h2>
-                    
+                    <h2>Test Results</h2>
+
                     <div class="scale-result">
-                        <h3>Депрессия <span class="score-badge">{{ depressionScore }}</span></h3>
+                        <h3>Depression <span class="score-badge">{{ depressionScore }}</span></h3>
                         <div class="level-bar">
                             <div class="level-fill" :class="depressionColor" :style="{width: Math.min(depressionScore/42*100, 100) + '%'}"></div>
                             <div class="level-text">{{ depressionLevel }}</div>
@@ -303,7 +303,7 @@
                     </div>
 
                     <div class="scale-result">
-                        <h3>Тревога <span class="score-badge">{{ anxietyScore }}</span></h3>
+                        <h3>Anxiety <span class="score-badge">{{ anxietyScore }}</span></h3>
                         <div class="level-bar">
                             <div class="level-fill" :class="anxietyColor" :style="{width: Math.min(anxietyScore/42*100, 100) + '%'}"></div>
                             <div class="level-text">{{ anxietyLevel }}</div>
@@ -312,7 +312,7 @@
                     </div>
 
                     <div class="scale-result">
-                        <h3>Стресс <span class="score-badge">{{ stressScore }}</span></h3>
+                        <h3>Stress <span class="score-badge">{{ stressScore }}</span></h3>
                         <div class="level-bar">
                             <div class="level-fill" :class="stressColor" :style="{width: Math.min(stressScore/42*100, 100) + '%'}"></div>
                             <div class="level-text">{{ stressLevel }}</div>
@@ -324,37 +324,37 @@
                         <div class="chart">
                             <div class="chart-bar-wrap">
                                 <div class="chart-bar" :class="depressionColor" :style="{height: Math.max(depressionScore/42*160, 4) + 'px'}"></div>
-                                <div class="chart-label">Депрессия</div>
+                                <div class="chart-label">Depression</div>
                             </div>
                             <div class="chart-bar-wrap">
                                 <div class="chart-bar" :class="anxietyColor" :style="{height: Math.max(anxietyScore/42*160, 4) + 'px'}"></div>
-                                <div class="chart-label">Тревога</div>
+                                <div class="chart-label">Anxiety</div>
                             </div>
                             <div class="chart-bar-wrap">
                                 <div class="chart-bar" :class="stressColor" :style="{height: Math.max(stressScore/42*160, 4) + 'px'}"></div>
-                                <div class="chart-label">Стресс</div>
+                                <div class="chart-label">Stress</div>
                             </div>
                         </div>
                     </div>
 
-                    <button class="btn" @click="reset" style="margin-top: 20px;">Пройти заново</button>
+                    <button class="btn" @click="reset" style="margin-top: 20px;">Retake Test</button>
                 </div>
             </div>
 
             <div class="sidebar" v-if="!showResults">
                 <div class="info-box">
-                    <h4>О методике</h4>
-                    <p><strong>Авторы:</strong> Lovibond S.H., Lovibond P.F. (1995)</p>
-                    <p><strong>Адаптация:</strong> Тарабрина Н.В. и др.</p>
-                    <p><strong>Назначение:</strong> Оценка негативных эмоциональных состояний за последнюю неделю.</p>
-                    <p><strong>Шкалы:</strong> депрессия (D), тревога (A), стресс (S).</p>
-                    <p><strong>Нормировка:</strong> сумма баллов × 2 (приведение к полной шкале DASS-42).</p>
+                    <h4>About the Scale</h4>
+                    <p><strong>Authors:</strong> Lovibond S.H., Lovibond P.F. (1995)</p>
+                    <p><strong>Adaptation:</strong> Henry & Crawford (2005) and others</p>
+                    <p><strong>Purpose:</strong> Assessment of negative emotional states over the past week.</p>
+                    <p><strong>Scales:</strong> Depression (D), Anxiety (A), Stress (S).</p>
+                    <p><strong>Scoring:</strong> sum of scores × 2 (conversion to full DASS-42 scale).</p>
                 </div>
                 <div class="info-box">
-                    <h4>Интерпретация</h4>
-                    <p><strong>Депрессия:</strong> 0-9 норма, 10-13 лёгкая, 14-20 умеренная, 21-27 тяжёлая, 28+ чрезвычайно тяжёлая</p>
-                    <p><strong>Тревога:</strong> 0-7 норма, 8-9 лёгкая, 10-14 умеренная, 15-19 тяжёлая, 20+ чрезвычайно тяжёлая</p>
-                    <p><strong>Стресс:</strong> 0-14 норма, 15-18 лёгкий, 19-25 умеренный, 26-33 тяжёлый, 34+ чрезвычайно тяжёлый</p>
+                    <h4>Interpretation</h4>
+                    <p><strong>Depression:</strong> 0-9 normal, 10-13 mild, 14-20 moderate, 21-27 severe, 28+ extremely severe</p>
+                    <p><strong>Anxiety:</strong> 0-7 normal, 8-9 mild, 10-14 moderate, 15-19 severe, 20+ extremely severe</p>
+                    <p><strong>Stress:</strong> 0-14 normal, 15-18 mild, 19-25 moderate, 26-33 severe, 34+ extremely severe</p>
                 </div>
             </div>
         </div>
@@ -368,33 +368,33 @@
                     answers: {},
                     showResults: false,
                     options: [
-                        { value: 0, label: '0 — Не соответствует мне совсем' },
-                        { value: 1, label: '1 — Соответствует мне в какой-то степени' },
-                        { value: 2, label: '2 — Соответствует мне в значительной степени' },
-                        { value: 3, label: '3 — Соответствует мне полностью' }
+                        { value: 0, label: '0 — Did not apply to me at all' },
+                        { value: 1, label: '1 — Applied to me to some degree' },
+                        { value: 2, label: '2 — Applied to me to a considerable degree' },
+                        { value: 3, label: '3 — Applied to me very much' }
                     ],
                     questions: [
-                        { id: 1, text: 'Мне было трудно успокоиться', scale: 's' },
-                        { id: 2, text: 'Я чувствовал, что рот мне пересыхает', scale: 'a' },
-                        { id: 3, text: 'Мне не удавалось испытывать позитивные чувства', scale: 'd' },
-                        { id: 4, text: 'Я испытывал затруднения при дыхании', scale: 'a' },
-                        { id: 5, text: 'Мне было трудно найти энтузиазм для чего-либо', scale: 'd' },
-                        { id: 6, text: 'Я склонен был реагировать излишне эмоционально', scale: 's' },
-                        { id: 7, text: 'Я чувствовал себя измождённым', scale: 's' },
-                        { id: 8, text: 'Я чувствовал, что нахожусь на грани нервного срыва', scale: 'a' },
-                        { id: 9, text: 'Я чувствовал себя напряжённым', scale: 's' },
-                        { id: 10, text: 'Я чувствовал, что не осталось ничего хорошего', scale: 'd' },
-                        { id: 11, text: 'Я чувствовал себя беспокойным', scale: 'a' },
-                        { id: 12, text: 'Мне было трудно расслабиться', scale: 's' },
-                        { id: 13, text: 'Я чувствовал себя подавленным и унылым', scale: 'd' },
-                        { id: 14, text: 'Я был нетерпелив к любым препятствиям', scale: 's' },
-                        { id: 15, text: 'Я испытывал чувство надвигающейся паники', scale: 'a' },
-                        { id: 16, text: 'Я не мог найти в себе силы на что-либо', scale: 'd' },
-                        { id: 17, text: 'Я чувствовал себя ничем не интересующимся', scale: 'd' },
-                        { id: 18, text: 'Я чувствовал, что не стою как человек', scale: 'd' },
-                        { id: 19, text: 'Я замечал, что сердце бьётся учащённо', scale: 'a' },
-                        { id: 20, text: 'Я чувствовал себя напуганным без видимой причины', scale: 'a' },
-                        { id: 21, text: 'Мне казалось, что жизнь бессмысленна', scale: 'd' }
+                        { id: 1, text: 'I found it hard to wind down', scale: 's' },
+                        { id: 2, text: 'I was aware of dryness of my mouth', scale: 'a' },
+                        { id: 3, text: 'I couldn't seem to experience any positive feeling at all', scale: 'd' },
+                        { id: 4, text: 'I experienced breathing difficulty', scale: 'a' },
+                        { id: 5, text: 'I found it difficult to work up the initiative to do things', scale: 'd' },
+                        { id: 6, text: 'I tended to over-react to situations', scale: 's' },
+                        { id: 7, text: 'I experienced trembling (e.g., in the hands)', scale: 's' },
+                        { id: 8, text: 'I felt that I was using a lot of nervous energy', scale: 'a' },
+                        { id: 9, text: 'I was worried about situations in which I might panic and make a fool of myself', scale: 's' },
+                        { id: 10, text: 'I felt that I had nothing to look forward to', scale: 'd' },
+                        { id: 11, text: 'I found myself getting agitated', scale: 'a' },
+                        { id: 12, text: 'I found it difficult to relax', scale: 's' },
+                        { id: 13, text: 'I felt down-hearted and blue', scale: 'd' },
+                        { id: 14, text: 'I was intolerant of anything that kept me from getting on with what I was doing', scale: 's' },
+                        { id: 15, text: 'I felt I was close to panic', scale: 'a' },
+                        { id: 16, text: 'I was unable to become enthusiastic about anything', scale: 'd' },
+                        { id: 17, text: 'I felt I wasn't worth much as a person', scale: 'd' },
+                        { id: 18, text: 'I felt that I was rather touchy', scale: 'd' },
+                        { id: 19, text: 'I was aware of the action of my heart in the absence of physical exertion', scale: 'a' },
+                        { id: 20, text: 'I felt scared without any good reason', scale: 'a' },
+                        { id: 21, text: 'I felt that life was meaningless', scale: 'd' }
                     ]
                 };
             },
@@ -428,27 +428,27 @@
                 stressScore() { return this.stressRaw * 2; },
                 depressionLevel() {
                     const s = this.depressionScore;
-                    if (s <= 9) return 'Норма';
-                    if (s <= 13) return 'Лёгкая';
-                    if (s <= 20) return 'Умеренная';
-                    if (s <= 27) return 'Тяжёлая';
-                    return 'Чрезвычайно тяжёлая';
+                    if (s <= 9) return 'Normal';
+                    if (s <= 13) return 'Mild';
+                    if (s <= 20) return 'Moderate';
+                    if (s <= 27) return 'Severe';
+                    return 'Extremely Severe';
                 },
                 anxietyLevel() {
                     const s = this.anxietyScore;
-                    if (s <= 7) return 'Норма';
-                    if (s <= 9) return 'Лёгкая';
-                    if (s <= 14) return 'Умеренная';
-                    if (s <= 19) return 'Тяжёлая';
-                    return 'Чрезвычайно тяжёлая';
+                    if (s <= 7) return 'Normal';
+                    if (s <= 9) return 'Mild';
+                    if (s <= 14) return 'Moderate';
+                    if (s <= 19) return 'Severe';
+                    return 'Extremely Severe';
                 },
                 stressLevel() {
                     const s = this.stressScore;
-                    if (s <= 14) return 'Норма';
-                    if (s <= 18) return 'Лёгкий';
-                    if (s <= 25) return 'Умеренный';
-                    if (s <= 33) return 'Тяжёлый';
-                    return 'Чрезвычайно тяжёлый';
+                    if (s <= 14) return 'Normal';
+                    if (s <= 18) return 'Mild';
+                    if (s <= 25) return 'Moderate';
+                    if (s <= 33) return 'Severe';
+                    return 'Extremely Severe';
                 },
                 depressionColor() {
                     const s = this.depressionScore;
@@ -470,31 +470,31 @@
                 },
                 depressionDesc() {
                     const lvls = {
-                        'Норма': 'Состояние в пределах нормы. Негативные эмоции минимальны.',
-                        'Лёгкая': 'Незначительные проявления депрессивных переживаний. Рекомендуется наблюдение.',
-                        'Умеренная': 'Выраженные депрессивные симптомы. Рекомендуется консультация специалиста.',
-                        'Тяжёлая': 'Серьёзные депрессивные проявления. Необходима профессиональная помощь.',
-                        'Чрезвычайно тяжёлая': 'Крайне выраженная депрессия. Срочно обратитесь к психотерапевту или психиатру.'
+                        'Normal': 'Your emotional state is within normal limits. Negative emotions are minimal.',
+                        'Mild': 'Minor signs of depressive experiences. Monitoring is recommended.',
+                        'Moderate': 'Noticeable depressive symptoms. Consultation with a specialist is recommended.',
+                        'Severe': 'Serious depressive manifestations. Professional help is necessary.',
+                        'Extremely Severe': 'Extremely severe depression. Seek a psychotherapist or psychiatrist urgently.'
                     };
                     return lvls[this.depressionLevel];
                 },
                 anxietyDesc() {
                     const lvls = {
-                        'Норма': 'Тревожность в пределах нормы.',
-                        'Лёгкая': 'Незначительная тревожность. Полезны техники релаксации.',
-                        'Умеренная': 'Выраженная тревога. Рекомендуется консультация специалиста.',
-                        'Тяжёлая': 'Серьёзная тревожность. Необходима профессиональная помощь.',
-                        'Чрезвычайно тяжёлая': 'Крайне выраженная тревога. Срочно обратитесь к специалисту.'
+                        'Normal': 'Anxiety is within normal limits.',
+                        'Mild': 'Minor anxiety. Relaxation techniques may be helpful.',
+                        'Moderate': 'Noticeable anxiety. Consultation with a specialist is recommended.',
+                        'Severe': 'Serious anxiety. Professional help is necessary.',
+                        'Extremely Severe': 'Extremely severe anxiety. Seek a specialist urgently.'
                     };
                     return lvls[this.anxietyLevel];
                 },
                 stressDesc() {
                     const lvls = {
-                        'Норма': 'Уровень стресса в пределах нормы.',
-                        'Лёгкий': 'Незначительный стресс. Рекомендуется отдых и физическая активность.',
-                        'Умеренный': 'Выраженный стресс. Важен пересмотр образа жизни и нагрузок.',
-                        'Тяжёлый': 'Серьёзный стресс. Рекомендуется консультация специалиста.',
-                        'Чрезвычайно тяжёлый': 'Критический уровень стресса. Срочно обратитесь за помощью.'
+                        'Normal': 'Stress level is within normal limits.',
+                        'Mild': 'Minor stress. Rest and physical activity are recommended.',
+                        'Moderate': 'Noticeable stress. Review of lifestyle and workload is important.',
+                        'Severe': 'Serious stress. Consultation with a specialist is recommended.',
+                        'Extremely Severe': 'Critical stress level. Seek help urgently.'
                     };
                     return lvls[this.stressLevel];
                 }
